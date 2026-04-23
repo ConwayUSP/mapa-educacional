@@ -1,7 +1,9 @@
+import { Outlet, useNavigate } from 'react-router-dom'
+
 function App() {
   return (
     <>
-      <h1>Mapa Educacional</h1>
+      <Outlet />
     </>
   )
 }
