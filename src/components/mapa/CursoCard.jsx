@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import './CursoCard.css'
 import isSmallScreen from '@utils/isSmallScreen'
-import CursoModal from '@components/CursoModal'
+import CursoModal from './CursoModal'
 
 /*
 - Para utilizar, forneça no campo "file" o nome do arquivo de dados presente em /public/data/trilhas/ como "EXEMPLO" para EXEMPLO.json
