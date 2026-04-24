@@ -1,0 +1,52 @@
+.trilha-card {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.65rem;
+    
+    .icon {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+.vertical {
+    flex-direction: column;
+    gap: 0.15rem;
+    text-align: center;
+}
+
+.trilha-label {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+}
+
+h4 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    text-align: right;
+    margin: 0;
+    text-transform: uppercase;
+
+    .vertical & {
+        text-align: center;
+    }
+}
+
+h5 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-align: right;
+    margin: 0;
+    text-transform: uppercase;
+
+    .vertical & {
+        text-align: center;
+    }
+}

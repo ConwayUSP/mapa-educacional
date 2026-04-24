@@ -56,6 +56,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "EB Garamond", serif;
 }
 
+p {
+  margin: 0;
+  font-family: "Roca Two";
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  white-space: pre-wrap;
+}
+
 @font-face {
   font-family: 'Roca Two';
   src: url('/fonts/roca-two-thin.ttf') format('truetype');
