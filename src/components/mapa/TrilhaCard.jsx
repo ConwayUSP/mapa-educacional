@@ -20,10 +20,10 @@ function TrilhaCard({ line1, line2, icon, type, color }) {
             transition: { duration: 0.2, ease: 'easeOut' },
         }}
         >
-            <img className="icon" src={`/icons/trilhas/${icon}.png`} alt={line1} />
+            <img className="icon" src={`/icons/trilhas/${icon}.png`} alt={line2} />
             <div className="trilha-label" style={{color: `var(--${color || 'yellow'})`}}>
-                <h4>{line1}</h4>
-                <h5>{line2}</h5>
+                <h5>{line1}</h5>
+                <h4>{line2}</h4>
             </div>
         </motion.div>
     )
