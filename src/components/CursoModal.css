@@ -1,0 +1,78 @@
+.curso-modal{
+    max-width: 26rem;
+    display: flex;
+    flex-direction: column;
+    border: 0.15rem solid var(--content-primary);
+    border-radius: 1.25rem;
+    background-color: #49424F;
+    margin: 1rem;
+    box-shadow: 0rem 0.05rem 0.75rem rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.curso-modal-title {
+    width: 26rem;
+    border-bottom: 0.05rem solid var(--blue);
+    text-align: center;
+    background-color: #312A3F;
+}
+
+.curso-modal-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-top: 0.75rem;
+    text-align: left;
+    gap: 0.5rem;
+}
+
+h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-align: left;
+    margin: 1rem;
+    margin-bottom: 0.75em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.25rem;
+    text-align: left;
+    margin: 0;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: 'Roca Two', serif;
+    font-weight: 800;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-align: center;
+    padding: 0.65rem 0.75rem;
+    border: none;
+    border-radius: 0.75rem;
+    background-color: var(--purple-light);
+    color: var(--content-primary);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.estrelinhas-top {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+}
+
+.estrelinhas-bottom {
+    position: absolute;
+    bottom: 2rem;
+    left: 1.75rem;
+}
