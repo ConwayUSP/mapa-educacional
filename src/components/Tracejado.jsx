@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import './Tracejado.css'
 import getPathEnd from '@utils/getPathEnd'
 
 function Tracejado({d, comeco, final}) {
