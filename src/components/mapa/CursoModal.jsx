@@ -17,7 +17,7 @@ function CursoModal({data}) {
             <div className="curso-modal-content">
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
                     <svg width="0.65rem" height="0.65rem" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="2" width="8" height="8" transform="rotate(-45 6 6)" fill="var(--yellow)" />
+                        <rect x="0.1rem" y="0.1rem" width="0.4rem" height="0.4rem" transform="rotate(-45 6 6)" fill="var(--yellow)" />
                     </svg>
                     <h3 style={{ color: 'var(--yellow)' }}>{data.subtitulo}</h3>
                 </div>

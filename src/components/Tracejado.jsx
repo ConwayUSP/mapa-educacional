@@ -5,7 +5,7 @@ import getPathEnd from '@utils/getPathEnd'
 function Tracejado({d, comeco, final}) {
     const { start, end } = getPathEnd(d);
     return (
-        <svg className="tracejado" width="400" height="300" viewBox="0 0 400 300">
+        <svg className="tracejado" viewBox="0 0 400 300">
             {final === "seta" &&
                 <marker
                 id="arrowUp"
