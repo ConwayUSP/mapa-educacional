@@ -8,13 +8,14 @@ import './TrilhaCard.css'
 - "color" é um campo opcional para definir a cor do texto. Confira /index.css para as opções de cores ou adicione uma nova
 */
 
-function TrilhaCard({ line1, line2, icon, type, color }) {
+function TrilhaCard({ line1, line2, icon, type, color, id }) {
 
     if (!line1 || !line2 || !icon) return null
 
     return (
         <motion.div 
         className={`trilha-card ${type === 'vertical' ? 'vertical' : ''}`} 
+        id={id}
         whileHover={{
             scale: 1.15,
             transition: { duration: 0.2, ease: 'easeOut' },

@@ -9,7 +9,7 @@ import CursoModal from './CursoModal'
 - "type" é um campo opcional. Caso deseje utilizar um card horizontal (texto à direita do ícone), basta fornecer o valor "horizontal"
 */
 
-function CursoCard({ file, type }) {
+function CursoCard({ file, type, id }) {
     const [data, setData] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -31,7 +31,7 @@ function CursoCard({ file, type }) {
     if (!data) return null
 
     return (
-        <div className="curso-card-wrapper">
+        <div className="curso-card-wrapper" id={id}>
             <motion.div 
             className={`curso-card ${type === 'horizontal' ? 'horizontal' : ''}`} 
             onClick={isSmallScreen() ? () => setIsModalOpen(true) : () => window.open(data.link, '_blank')}
@@ -65,14 +65,14 @@ function CursoCard({ file, type }) {
             </motion.div>
             {isModalOpen && (
             isSmallScreen() ? 
-                <motion.div className="bg-overlay" style={{ display: isModalOpen ? 'block' : 'none' }} onClick={() => setIsModalOpen(false) }>
+                <motion.div className="bg-overlay" style={{ display: isModalOpen ? 'flex' : 'none' }} onClick={() => setIsModalOpen(false) }>
                     <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'block' : 'none' }} 
-                    >
+                    initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 0.03, ease: 'easeOut' }}>
                         <CursoModal data={data} />
                     </motion.div>
                 </motion.div>
             :
-                <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'block' : 'none' }} 
+                <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'flex' : 'none' }} 
                 initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 0.03, ease: 'easeIn' }}>
                     <CursoModal data={data} />
                 </motion.div>

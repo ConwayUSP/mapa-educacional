@@ -1,4 +1,7 @@
 .trilha-card {
+    position: fixed;
+    z-index: 2;
+    
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
