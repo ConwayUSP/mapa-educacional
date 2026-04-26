@@ -5,11 +5,11 @@ import arrow from '@assets/icons/arrow-forward.svg'
 import estrelinhas1 from '@assets/enfeites/twinkles1.svg'
 import estrelinhas2 from '@assets/enfeites/twinkles2.svg'
 
-function CursoModal({data}) {
+function CursoModal({data, id}) {
     if (!data) return null
     
     return (
-        <div className="curso-modal">
+        <div className="curso-modal" id={id}>
             <div className="curso-modal-title">
                 <h2>{data.titulo}</h2>
                 <img className="estrelinhas-top" src={estrelinhas1} alt="Estrelinhas" style={{ height: '1.75rem', width: 'auto' }} />

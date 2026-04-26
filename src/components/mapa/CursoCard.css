@@ -1,4 +1,7 @@
 .curso-card-wrapper {
+    position: fixed;
+    z-index: 2;
+    
     overflow: visible;
     @media (min-width: 640px) {
         position: relative;

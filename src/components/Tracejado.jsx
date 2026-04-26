@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import './Tracejado.css'
 import getPathEnd from '@utils/getPathEnd'
 
-function Tracejado({d, comeco, final}) {
+function Tracejado({d, comeco, final, id}) {
     const { start, end } = getPathEnd(d);
 
     const padding = 10;
@@ -16,7 +16,7 @@ function Tracejado({d, comeco, final}) {
     const height = maxY - minY;
 
     return (
-        <svg className="tracejado" viewBox={`${minX} ${minY} ${width} ${height}`}>
+        <svg className="tracejado" viewBox={`${minX} ${minY} ${width} ${height}`} id={id}>
             {final === "seta" &&
                 <marker
                 id="arrowUp"

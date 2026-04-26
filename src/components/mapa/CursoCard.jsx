@@ -9,7 +9,7 @@ import CursoModal from './CursoModal'
 - "type" é um campo opcional. Caso deseje utilizar um card horizontal (texto à direita do ícone), basta fornecer o valor "horizontal"
 */
 
-function CursoCard({ file, type }) {
+function CursoCard({ file, type, id }) {
     const [data, setData] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -31,7 +31,7 @@ function CursoCard({ file, type }) {
     if (!data) return null
 
     return (
-        <div className="curso-card-wrapper">
+        <div className="curso-card-wrapper" id={id}>
             <motion.div 
             className={`curso-card ${type === 'horizontal' ? 'horizontal' : ''}`} 
             onClick={isSmallScreen() ? () => setIsModalOpen(true) : () => window.open(data.link, '_blank')}
