@@ -65,14 +65,14 @@ function CursoCard({ file, type }) {
             </motion.div>
             {isModalOpen && (
             isSmallScreen() ? 
-                <motion.div className="bg-overlay" style={{ display: isModalOpen ? 'block' : 'none' }} onClick={() => setIsModalOpen(false) }>
+                <motion.div className="bg-overlay" style={{ display: isModalOpen ? 'flex' : 'none' }} onClick={() => setIsModalOpen(false) }>
                     <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'block' : 'none' }} 
                     >
                         <CursoModal data={data} />
                     </motion.div>
                 </motion.div>
             :
-                <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'block' : 'none' }} 
+                <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'flex' : 'none' }} 
                 initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 0.03, ease: 'easeIn' }}>
                     <CursoModal data={data} />
                 </motion.div>
