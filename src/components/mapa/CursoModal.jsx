@@ -11,7 +11,7 @@ function CursoModal({data, id}) {
     return (
         <div className="curso-modal" id={id}>
             <div className="curso-modal-title">
-                <h2>{data.titulo}</h2>
+                <h2 style={{ marginRight: "2.5rem" }}>{data.titulo}</h2>
                 <img className="estrelinhas-top" src={estrelinhas1} alt="Estrelinhas" style={{ height: '1.75rem', width: 'auto' }} />
             </div>
             <div className="curso-modal-content">
@@ -21,7 +21,11 @@ function CursoModal({data, id}) {
                     </svg>
                     <h3 style={{ color: 'var(--yellow)' }}>{data.subtitulo}</h3>
                 </div>
-                <p>{data.descricao}</p>
+
+                {data.descricao.split('\n').map((line, index) => ( 
+                    <p key={index} style={{ marginBottom: "0.25rem"}}>{line}</p>
+                ))}
+                
                 { isSmallScreen() ?
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'end', gap: '0.5rem' }}>
                         <motion.button onClick={() => window.open(data.link, '_blank')}>
