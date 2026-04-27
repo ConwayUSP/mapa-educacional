@@ -5,12 +5,12 @@ import getPathEnd from '@utils/getPathEnd'
 function Tracejado({d, comeco, final, id}) {
     const { start, end } = getPathEnd(d);
 
-    const padding = 10;
+    const padding = 18;
 
-    const minX = end.x - padding;
-    const minY = end.y - padding;
-    const maxX = start.x + padding;
-    const maxY = start.y + padding;
+    const minX = Math.min(start.x, end.x) - padding;
+    const minY = Math.min(start.y, end.y) - padding;
+    const maxX = Math.max(start.x, end.x) + padding;
+    const maxY = Math.max(start.y, end.y) + padding;
 
     const width = maxX - minX;
     const height = maxY - minY;
@@ -20,7 +20,7 @@ function Tracejado({d, comeco, final, id}) {
             {final === "seta" &&
                 <marker
                 id="arrowUp"
-                markerWidth="10"
+                markerWidth="6"
                 markerHeight="7"
                 viewBox="-2 -2 14 14"
                 refX="5"
@@ -36,7 +36,7 @@ function Tracejado({d, comeco, final, id}) {
                 d={d}
                 fill="transparent"
                 stroke="white"
-                strokeWidth="2.5"
+                strokeWidth="2"
                 strokeDasharray="6 7"
                 initial={{ strokeDashoffset: 250 }}
                 animate={{ strokeDashoffset: 0 }}
@@ -44,11 +44,12 @@ function Tracejado({d, comeco, final, id}) {
                 duration: 3,
                 ease: "easeOut",
                 }}
-                markerEnd="url(#arrowUp)"
+                markerEnd={final === "seta" ? "url(#arrowUp)" : undefined}
+                markerStart={comeco === "circulo" ? "url(#circleStart)" : undefined}
             />
 
             {comeco === "circulo" &&
-                <circle cx={start.x} cy={start.y} r="6" fill="white" />
+                <circle cx={start.x} cy={start.y} r="4" fill="white" />
             }
         </svg>
     )
