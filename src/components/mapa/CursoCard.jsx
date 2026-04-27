@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import './CursoCard.css'
 import isSmallScreen from '@utils/isSmallScreen'
@@ -12,6 +13,29 @@ import CursoModal from './CursoModal'
 function CursoCard({ file, type, id }) {
     const [data, setData] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [modalPos, setModalPos] = useState({ x: 0, y: 0 })
+
+    function handleOpen(e) {
+        const rect = e.currentTarget.getBoundingClientRect()
+
+        if (!isSmallScreen()) {
+            setModalPos({x: rect.left + 72, y: rect.top + 80})
+        } else {
+            setModalPos({x: rect.left - 180, y: rect.top - 72})
+        }
+
+        setIsModalOpen(true)
+    }
+
+    useEffect(() => {
+        if (!isModalOpen) return;
+        const preventScroll = (e) => e.preventDefault();
+        document.addEventListener('touchmove', preventScroll, { passive: false });
+
+        return () => {
+            document.removeEventListener('touchmove', preventScroll);
+        };
+    }, [isModalOpen]);
 
     useEffect(() => {
         if (file) {
@@ -34,8 +58,8 @@ function CursoCard({ file, type, id }) {
         <div className="curso-card-wrapper" id={id}>
             <motion.div 
             className={`curso-card ${type === 'horizontal' ? 'horizontal' : ''}`} 
-            onClick={isSmallScreen() ? () => setIsModalOpen(true) : () => window.open(data.link, '_blank')}
-            onMouseEnter={isSmallScreen() ? null : () => setIsModalOpen(true)}
+            onClick={isSmallScreen() ? (e) => handleOpen(e) : () => window.open(data.link, '_blank')}
+            onMouseEnter={isSmallScreen() ? null : (e) => handleOpen(e)}
             onMouseLeave={isSmallScreen() ? null : () => setIsModalOpen(false)}
             whileHover={{
                 scale: 1.15,
@@ -63,20 +87,20 @@ function CursoCard({ file, type, id }) {
                     })}
                 </div>
             </motion.div>
-            {isModalOpen && (
+            {isModalOpen && createPortal(
             isSmallScreen() ? 
-                <motion.div className="bg-overlay" style={{ display: isModalOpen ? 'flex' : 'none' }} onClick={() => setIsModalOpen(false) }>
-                    <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'block' : 'none' }} 
+                <motion.div className="bg-overlay" onClick={() => setIsModalOpen(false) }>
+                    <motion.div className="curso-modal-container" style={{ top: modalPos.y, left: modalPos.x }} 
                     initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 0.03, ease: 'easeOut' }}>
                         <CursoModal data={data} />
                     </motion.div>
                 </motion.div>
             :
-                <motion.div className="curso-modal-container" style={{ display: isModalOpen ? 'flex' : 'none' }} 
+                <motion.div className="curso-modal-container" style={{ top: modalPos.y, left: modalPos.x }} 
                 initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 0.03, ease: 'easeIn' }}>
                     <CursoModal data={data} />
                 </motion.div>
-            )}
+            , document.body)}
         </div>
     )
 }
