@@ -29,6 +29,7 @@ function CursoCard({ file, type, id }) {
 
     useEffect(() => {
         if (!isModalOpen) return;
+        if (!isSmallScreen()) return;
         const preventScroll = (e) => e.preventDefault();
         document.addEventListener('touchmove', preventScroll, { passive: false });
 
