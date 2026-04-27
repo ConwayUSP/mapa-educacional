@@ -79,7 +79,8 @@ function CursoCard({ file, type, id }) {
                             );
                         }
 
-                        const cor = "var(--" + data.cores[filteredLabel.indexOf(palavra)] + ")";
+                        const cor = Array.isArray(data.cores)? "var(--" + data.cores[filteredLabel.indexOf(palavra)] + ")" : "var(--" + data.cores + ")";
+                        
                         return (
                             <span key={index} style={{ color: cor }}>
                                 {palavra + " "}

@@ -1,5 +1,5 @@
 .curso-modal{
-    max-width: 26rem;
+    max-width: 28rem;
     display: flex;
     flex-direction: column;
     border: 0.15rem solid var(--content-primary);
@@ -12,7 +12,7 @@
 }
 
 .curso-modal-title {
-    width: 26rem;
+    width: 100%;
     border-bottom: 0.05rem solid var(--blue);
     text-align: center;
     background-color: #312A3F;
@@ -31,7 +31,7 @@ h2 {
     font-family: 'EB Garamond', serif;
     font-weight: 600;
     font-size: 1.25rem;
-    line-height: 1.5rem;
+    line-height: 1.75rem;
     text-align: left;
     margin: 1rem;
     margin-bottom: 0.75em;
