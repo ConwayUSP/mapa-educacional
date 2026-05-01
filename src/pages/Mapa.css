@@ -15,7 +15,7 @@
     margin-left: 0rem;
     gap: 10rem;
 
-    @media (min-width: 640px) {
+    @media (min-width: 1024px) {
         padding: 1rem;
         gap: 3rem;
         margin: 0;

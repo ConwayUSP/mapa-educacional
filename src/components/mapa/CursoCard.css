@@ -51,7 +51,7 @@
     position: fixed;
     z-index: 100;
     
-    @media (min-width: 640px) {
+    @media (min-width: 1024px) {
         position: absolute;
         width: fit-content;
         height: fit-content;
