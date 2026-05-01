@@ -5,6 +5,6 @@
     "titulo": "Fundamentos da Arte para Jogos", 
     "subtitulo": "Sobre este curso:",
     "descricao": 
-        "Se você sempre quis fazer seus próprios jogos com as ferramentas mais modernas do mercado, prioriza o desenvolvimento open-source, e valoriza um código rápido, manutenível, seguro e elegante, então esse curso é para você. \nApresentamos o curso Lucky Crab, dedicado a ensinar o Godot Game Engine, um 'motor de jogo', que permite criar jogos 2D e 3D, cross-plataforma, grátis e open-source. Além disso, estenderemos as funcionalidades do Godot usando a linguagem de programação Rust, uma linguagem de sistemas focada em construir softwares eficientes e confiáveis.",
+        "Desde o design dos personagens até a ambientação do mundo, a arte está intrinsecamente relacionada à jogabilidade e à narração da história nos games. \nAssim, uma boa paleta de cores, posicionamentos corretos de elementos e hierarquia de ênfase dos objetos são alguns dos fatores que influenciam positivamente na estética. Você poderá criar e compor sua própria arte para jogos, aprendendo conceitos essenciais da arte aplicada ao desenvolvimento de jogos, desde a teoria das cores até a composição de cenários e clareza visual.",
     "link": "https://github.com/ConwayUSP/Fundamentos-da-Arte-para-Jogos"
 }

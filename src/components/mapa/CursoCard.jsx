@@ -19,9 +19,9 @@ function CursoCard({ file, type, id }) {
         const rect = e.currentTarget.getBoundingClientRect()
 
         if (!isSmallScreen()) {
-            setModalPos({x: rect.left + 72, y: rect.top + 80})
+            setModalPos({x: rect.left + 52, y: rect.top + 64})
         } else {
-            setModalPos({x: rect.left - 180, y: rect.top - 72})
+            setModalPos({x: rect.left - 144, y: rect.top - 52})
         }
 
         setIsModalOpen(true)

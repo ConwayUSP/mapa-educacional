@@ -2,7 +2,7 @@
   font-family: "Roca Two",  system-ui;
   font-weight: 200;
   line-height: 1.5;
-  font-size: clamp(12px, 2vw + 0.3em, 18px);
+  font-size: clamp(12px, 1.5vw + 3px, 18px);
 
   color: var(--content-primary);
   background-color: var(--bg-primary);

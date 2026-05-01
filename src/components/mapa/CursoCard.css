@@ -13,8 +13,8 @@
     align-items: center;
     
     .icon {
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
     }
 }
 
@@ -23,11 +23,11 @@
 }
 
 .curso-label {
-    width: 4.65rem;
+    width: 3.75rem;
     font-family: 'EB Garamond', serif;
     font-weight: 600;
-    font-size: 1.25rem;
-    line-height: 1.25rem;
+    font-size: 1rem;
+    line-height: 1rem;
     text-align: center;
 }
 
@@ -51,12 +51,12 @@
     position: fixed;
     z-index: 100;
     
-    @media (min-width: 640px) {
+    @media (min-width: 1024px) {
         position: absolute;
         width: fit-content;
         height: fit-content;
-        top: -4rem;
-        left: 16rem;
+        top: -3.25rem;
+        left: 12.75rem;
         pointer-events: none;
     }
 }
