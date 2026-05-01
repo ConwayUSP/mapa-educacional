@@ -5,7 +5,7 @@ import getPathEnd from '@utils/getPathEnd'
 function Tracejado({d, comeco, final, id}) {
     const { start, end } = getPathEnd(d);
 
-    const padding = 18;
+    const padding = 15;
 
     const minX = Math.min(start.x, end.x) - padding;
     const minY = Math.min(start.y, end.y) - padding;
@@ -22,7 +22,7 @@ function Tracejado({d, comeco, final, id}) {
                 id="arrowUp"
                 markerWidth="6"
                 markerHeight="7"
-                viewBox="-2 -2 14 14"
+                viewBox="-3 -3 14 14"
                 refX="5"
                 refY="5"
                 orient="0"
@@ -36,9 +36,9 @@ function Tracejado({d, comeco, final, id}) {
                 d={d}
                 fill="transparent"
                 stroke="white"
-                strokeWidth="2"
-                strokeDasharray="6 7"
-                initial={{ strokeDashoffset: 250 }}
+                strokeWidth="1.5"
+                strokeDasharray="4.5 4.5"
+                initial={{ strokeDashoffset: 200 }}
                 animate={{ strokeDashoffset: 0 }}
                 transition={{
                 duration: 3,
@@ -49,7 +49,7 @@ function Tracejado({d, comeco, final, id}) {
             />
 
             {comeco === "circulo" &&
-                <circle cx={start.x} cy={start.y} r="4" fill="white" />
+                <circle cx={start.x} cy={start.y} r="3" fill="white" />
             }
         </svg>
     )
