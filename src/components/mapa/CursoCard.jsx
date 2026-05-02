@@ -21,7 +21,10 @@ function CursoCard({ file, type, id }) {
         const rect = e.currentTarget.getBoundingClientRect()
 
         if (!isSmallScreen()) {
-            setModalPos({x: rect.left + 52, y: rect.top + 64})
+            setModalPos({
+                x: Math.min(rect.left + 52, window.innerWidth - remToPx(24.5) - 24),
+                y: Math.min(rect.top + 64, window.innerHeight - remToPx(21) - 24)
+            })
         } else {
             setOverlayPos({
                 x: document.documentElement.scrollWidth - window.innerWidth - remToPx(6),

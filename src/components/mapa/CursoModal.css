@@ -2,11 +2,10 @@
     max-width: 22.5rem;
     display: flex;
     flex-direction: column;
-    border: 0.1rem solid var(--content-primary);
     border-radius: 1rem;
     background-color: #49424F;
     margin: 1rem;
-    box-shadow: 0rem 0.05rem 0.75rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0rem 0.05rem 0.5rem rgba(0, 0, 0, 0.25);
     overflow: hidden;
     z-index: 1000;
 }
@@ -68,12 +67,12 @@ button {
 
 .estrelinhas-top {
     position: absolute;
-    top: 1.4rem;
-    right: 1.4rem;
+    top: 1.5rem;
+    right: 1.5rem;
 }
 
 .estrelinhas-bottom {
     position: absolute;
-    bottom: 1.6rem;
-    left: 1.4rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
 }
