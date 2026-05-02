@@ -9,20 +9,11 @@ import Tracejado from '@components/Tracejado'
 function Mapa() {
   
   useEffect(() => {
-    if (isSmallScreen()) {
-      const mapa = document.querySelector('.mapa').getBoundingClientRect()
-      window.scroll({
-        top: mapa.top + mapa.height / 2,
-        left: mapa.left + mapa.width / 2,
-        behavior: 'smooth'
-      })
-    } else {
-      window.scroll({
-        top: document.documentElement.scrollHeight / 2 - window.innerHeight / 2,
-        left: document.documentElement.scrollWidth / 2 - window.innerWidth / 2,
-        behavior: 'smooth'
-      })
-    }
+    window.scroll({
+      top: document.documentElement.scrollHeight / 2 - window.innerHeight / 2,
+      left: document.documentElement.scrollWidth / 2 - window.innerWidth / 2,
+      behavior: 'smooth'
+    })
   }, []);
 
   return (

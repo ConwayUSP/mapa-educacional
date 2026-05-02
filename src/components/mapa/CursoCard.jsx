@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
 import './CursoCard.css'
 import isSmallScreen from '@utils/isSmallScreen'
+import { remToPx } from '@utils/convertValues'
 import CursoModal from './CursoModal'
 
 /*
@@ -13,6 +14,7 @@ import CursoModal from './CursoModal'
 function CursoCard({ file, type, id }) {
     const [data, setData] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    const [overlayPos, setOverlayPos] = useState({ x: 0, y: 0 })
     const [modalPos, setModalPos] = useState({ x: 0, y: 0 })
 
     function handleOpen(e) {
@@ -21,7 +23,14 @@ function CursoCard({ file, type, id }) {
         if (!isSmallScreen()) {
             setModalPos({x: rect.left + 52, y: rect.top + 64})
         } else {
-            setModalPos({x: rect.left - 144, y: rect.top - 52})
+            setOverlayPos({
+                x: document.documentElement.scrollWidth - window.innerWidth - remToPx(6),
+                y: document.documentElement.scrollHeight - window.innerHeight - remToPx(6)
+            })
+            setModalPos({ // origem + (window size - modal size) / 2
+                x: overlayPos.x + (window.innerWidth - remToPx(24.5)) / 2,
+                y: overlayPos.y + (window.innerHeight - remToPx(24)) / 2
+            })
         }
 
         setIsModalOpen(true)
@@ -91,9 +100,9 @@ function CursoCard({ file, type, id }) {
             </motion.div>
             {isModalOpen && createPortal(
             isSmallScreen() ? 
-                <motion.div className="bg-overlay" onClick={() => setIsModalOpen(false) }>
+                <motion.div className="bg-overlay" style={{ top: overlayPos.y, left: overlayPos.x }} onClick={() => setIsModalOpen(false) }>
                     <motion.div className="curso-modal-container" style={{ top: modalPos.y, left: modalPos.x }} 
-                    initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 0.03, ease: 'easeOut' }}>
+                    initial={{ scale: 1.3 }} animate={{ scale: 1.25 }} transition={{ duration: 0.03, ease: 'easeOut' }}>
                         <CursoModal data={data} />
                     </motion.div>
                 </motion.div>
